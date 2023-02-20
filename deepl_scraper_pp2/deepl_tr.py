@@ -50,6 +50,7 @@ with CodeTimer(name="start a page", unit="s"):
 BROWSER = asyncio.get_event_loop().run_until_complete(
     pyppeteer.launch(
         autoClose=False,  # fix: https://github.com/pyppeteer/pyppeteer/issues/143
+        args=['--no-sandbox']
     )
 )
 PAGE = asyncio.get_event_loop().run_until_complete(BROWSER.newPage())
